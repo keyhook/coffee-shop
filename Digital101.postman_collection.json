@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "64dae536-65ff-4ece-89a1-6366a931b3dd",
+		"name": "Digital101",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1399095"
+	},
+	"item": [
+		{
+			"name": "Register Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mobileNumber\": \"090123456789\",\n    \"password\": \"123456789\",\n    \"name\": \"Khoa Nguyen\",\n    \"home_address\": \"123 Le Duan\",\n    \"work_address\": \"456 Hau Giang\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mobileNumber\": \"090123456789\",\n    \"password\": \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/customers/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"customers",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Staff",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"staff@shop.com\",\n    \"password\": \"123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/staffs/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"staffs",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Shop",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxZDA3MTEyYy0zNGFlLTQ3MDUtYTQ0YS0xMDczZmZhNDE0NzMiLCJzaG9wSWQiOiI0NWFjN2MxMC1hODE1LTRiZWUtYTI1Ni1lZjY3MThhNTM3MGYiLCJzdGFmZlR5cGUiOiJPV05FUiIsImV4cCI6MTY5ODE5MTE1OCwianRpIjoiNjA1NGFmMWMtMTc2Mi00MzgzLTkyODgtMmEzMzdiM2Y0NTYxIn0.Ixt2m5tLMV4CHgDPf29__aZ8pF3NcONdLMy5XVHNBO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/internal/v1/shops/45ac7c10-a815-4bee-a256-ef6718a5370f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"internal",
+						"v1",
+						"shops",
+						"45ac7c10-a815-4bee-a256-ef6718a5370f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Shop",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxZDA3MTEyYy0zNGFlLTQ3MDUtYTQ0YS0xMDczZmZhNDE0NzMiLCJzaG9wSWQiOiI0NWFjN2MxMC1hODE1LTRiZWUtYTI1Ni1lZjY3MThhNTM3MGYiLCJzdGFmZlR5cGUiOiJPV05FUiIsImV4cCI6MTY5ODE5MTE1OCwianRpIjoiNjA1NGFmMWMtMTc2Mi00MzgzLTkyODgtMmEzMzdiM2Y0NTYxIn0.Ixt2m5tLMV4CHgDPf29__aZ8pF3NcONdLMy5XVHNBO4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"location\": {\n        \"lat\": 7.7,\n        \"lng\": 9.9\n    },\n    \"contact\": {\n        \"street\": \"street\",\n        \"houseNumber\": \"house number\",\n        \"postalCode\": \"postal code\",\n        \"city\": \"city\",\n        \"phoneNumber\": \"111\"\n    },\n    \"menu\": [\n        {\n            \"coffeeId\": \"ecc96dd0-6e73-4b9e-9219-8319876ed92a\",\n            \"price\": {\n                \"amount\": \"7\",\n                \"currency\": \"SGD\"\n            }\n        },\n        {\n            \"coffeeId\": \"ed589dcd-dc46-4331-8b72-1e14197e711f\",\n            \"price\": {\n                \"amount\": \"10\",\n                \"currency\": \"SGD\"\n            }\n        }\n    ],\n    \"allowedOrderQueueCount\": 2,\n    \"allowedOrderQueueSize\": 50,\n    \"openingTime\": \"08:00:00\",\n    \"closingTime\": \"20:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/internal/v1/shops/45ac7c10-a815-4bee-a256-ef6718a5370f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"internal",
+						"v1",
+						"shops",
+						"45ac7c10-a815-4bee-a256-ef6718a5370f"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

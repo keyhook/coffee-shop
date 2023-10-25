@@ -1,0 +1,12 @@
+---
+version: '2'
+services:
+  postgresql:
+    image: postgres:15.3
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - "POSTGRES_USER=coffee_shop_user"
+      - "POSTGRES_PASSWORD=123456789"
+      - "POSTGRES_DB=coffee_shop_db"
